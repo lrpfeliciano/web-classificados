@@ -36,4 +36,19 @@ public class SecaoDao extends Conexao {
 		return lista;
 	}
 
+	public void incluir(Secao secao) {
+		String sql = "insert into secao "
+				+ " (descricao) values (?) ";
+	
+		try {
+			PreparedStatement ps = getConexao()
+					.prepareStatement(sql);
+			ps.setString(1, secao.getDescricao());
+			ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	
+	}
 }

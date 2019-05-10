@@ -13,16 +13,28 @@
 </head>
 <body>
 
+<a href="secao?acao=inicio_inclusao">Incluir nova seção</a>
+
 <jsp:useBean id="dao" 
 		class="br.com.classificados.dao.SecaoDao">
 	<table>
-	
+		<thead>
+			<tr>
+				<th>Descrição</th>
+				<th>Ações</th>
+		</thead>
+		<tbody>
 	<c:forEach var="secao" items="${dao.listar() }">
 		<tr>
 			<td>${secao.descricao } </td>
+			<td> 
+				<a href="">Alterar</a>
+				
+				<a href="">Excluir</a>
+			</td>	
 		</tr>
 	</c:forEach>
-	
+		</tbody>
 	</table>
 </jsp:useBean>
 </body>
