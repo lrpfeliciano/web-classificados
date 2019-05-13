@@ -51,4 +51,20 @@ public class SecaoDao extends Conexao {
 		}
 	
 	}
+	
+	public void excluir(Secao secao) {
+		String sql = "delete from secao "
+				+ " where idsecao = ? ";
+	
+		try {
+			PreparedStatement ps = getConexao()
+					.prepareStatement(sql);
+			ps.setInt(1, secao.getId());
+			ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
 }

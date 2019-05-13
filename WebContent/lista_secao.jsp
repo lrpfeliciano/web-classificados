@@ -30,7 +30,18 @@
 			<td> 
 				<a href="">Alterar</a>
 				
-				<a href="">Excluir</a>
+				<a href="secao?acao=excluir&id=${secao.id }">
+					Excluir</a>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
 			</td>	
 		</tr>
 	</c:forEach>

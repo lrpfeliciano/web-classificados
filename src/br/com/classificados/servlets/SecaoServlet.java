@@ -67,7 +67,15 @@ public class SecaoServlet extends HttpServlet {
 			rd.forward(request, response);
 		}
 		
-		
+		if (acao.equalsIgnoreCase("excluir")) {
+			secao.setId(Integer.parseInt( request.getParameter("id")));
+			
+			dao.excluir(secao);
+			RequestDispatcher rd = 
+					request.getRequestDispatcher("lista_secao.jsp");
+			rd.forward(request, response);
+
+		}
 		
 		
 		
