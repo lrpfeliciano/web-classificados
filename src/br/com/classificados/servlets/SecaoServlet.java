@@ -76,7 +76,18 @@ public class SecaoServlet extends HttpServlet {
 			rd.forward(request, response);
 
 		}
-		
+	
+		if (acao.equalsIgnoreCase("inicio_alteracao")) {
+			int id = Integer.parseInt( request.getParameter("id") );
+			
+			secao = dao.buscar(id);
+			request.setAttribute("secao", secao);
+			request.setAttribute("acao", "alterar");
+			
+			RequestDispatcher rd =
+					request.getRequestDispatcher("form_secao.jsp");
+			rd.forward(request, response);
+		}
 		
 		
 		

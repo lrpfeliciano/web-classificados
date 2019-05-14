@@ -53,8 +53,7 @@ public class SecaoDao extends Conexao {
 	}
 	
 	public void excluir(Secao secao) {
-		String sql = "delete from secao "
-				+ " where idsecao = ? ";
+		String sql = "delete from secao where idsecao = ? ";
 	
 		try {
 			PreparedStatement ps = getConexao()
@@ -67,4 +66,36 @@ public class SecaoDao extends Conexao {
 		}
 		
 	}
+
+	public Secao buscar(int id) {
+		// TODO Auto-generated method stub
+		String sql = "select * from secao where idsecao = ?";
+		Secao secao = null;
+		
+		try {
+			PreparedStatement ps = 
+					getConexao().prepareStatement(sql);
+			ps.setInt(1, id);
+			
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				secao = new Secao();
+				secao.setId(rs.getInt("idsecao"));
+				secao.setDescricao(rs.getString("descricao"));
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return secao;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

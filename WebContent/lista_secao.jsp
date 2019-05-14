@@ -28,7 +28,8 @@
 		<tr>
 			<td>${secao.descricao } </td>
 			<td> 
-				<a href="">Alterar</a>
+				<a href="secao?acao=inicio_alteracao&id=${secao.id }">
+					Alterar</a>
 				
 				<a href="secao?acao=excluir&id=${secao.id }">
 					Excluir</a>

@@ -14,7 +14,25 @@
 	
 		Descrição:
 		<input type="text" 
-			   name="descricao" />
+			   name="descricao"
+			   value="${requestScope['secao'].descricao }" />
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
 			   
 		<input type="submit" value="Salvar"/>
 	</form>
