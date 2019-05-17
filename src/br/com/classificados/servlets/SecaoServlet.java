@@ -90,6 +90,14 @@ public class SecaoServlet extends HttpServlet {
 		}
 		
 		if (acao.equalsIgnoreCase("alterar")) {
+			secao.setId(Integer.parseInt( request.getParameter("id") ));
+			secao.setDescricao(request.getParameter("descricao"));
+			
+			dao.alterar(secao);
+			
+			RequestDispatcher rd =
+					request.getRequestDispatcher("lista_secao.jsp");
+			rd.forward(request, response);
 			
 		}
 		

@@ -89,6 +89,23 @@ public class SecaoDao extends Conexao {
 		
 		return secao;
 	}
+
+	public void alterar(Secao secao) {
+		String sql = "update secao set "
+				+ " descricao = ? "
+				+ " where idsecao = ?";
+	
+		try {
+			PreparedStatement ps = getConexao()
+					.prepareStatement(sql);
+			ps.setString(1, secao.getDescricao());
+			ps.setInt(2, secao.getId());
+			ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	
 	
