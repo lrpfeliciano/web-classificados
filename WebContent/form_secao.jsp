@@ -11,6 +11,9 @@
 	<form method="post" action="secao">
 		<input type="hidden" name="acao" 
 			value="${requestScope['acao'] }" />
+		
+		<input type="hidden" name="id"
+			value="${requestScope['secao'].id }" />
 	
 		Descrição:
 		<input type="text" 

@@ -89,7 +89,9 @@ public class SecaoServlet extends HttpServlet {
 			rd.forward(request, response);
 		}
 		
-		
+		if (acao.equalsIgnoreCase("alterar")) {
+			
+		}
 		
 		
 		
