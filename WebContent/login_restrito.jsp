@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<form method="post" action="">
+	<form method="post" action="login-interno">
 		CPF:
 		<input type="text" 
 			   name="cpf" />
